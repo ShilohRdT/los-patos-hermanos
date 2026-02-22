@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Team | Los Patos Hermanos</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+  /* TEAM PAGE styles */
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 16px;
+  }
+
+  .member-card {
+    background: var(--mid);
+    border: 1px solid rgba(245,200,0,0.1);
+    padding: 40px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .member-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--yellow);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s;
+  }
+
+  .member-card:hover::before { transform: scaleY(1); }
+  .member-card:hover { border-color: rgba(245,200,0,0.4); transform: translateY(-4px); }
+
+  .member-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(245,200,0,0.08);
+    line-height: 1;
+    position: absolute;
+    top: 16px; right: 20px;
+    letter-spacing: -2px;
+  }
+
+  .member-avatar { font-size: 3.5rem; margin-bottom: 20px; }
+
+  .member-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .member-role {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(232,232,224,0.45);
+    margin: 8px 0 16px;
+  }
+
+  .member-divider {
+    width: 40px; height: 2px;
+    background: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .member-sim {
+    font-size: 0.9rem;
+    color: rgba(232,232,224,0.65);
+    margin-bottom: 6px;
+  }
+
+  .member-sim strong { color: var(--light); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Los Patos <span>Hermanos</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html" class="active">Team</a></li>
+    <li><a href="results.html">Results</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="page-header-glow"></div>
+  <div class="page-header-content">
+    <div class="page-tag">🦆 The Drivers</div>
+    <h1>Meet the <span>Squad</span></h1>
+  </div>
+</div>
+
+<!-- TEAM GRID -->
+<section class="content">
+  <div class="team-grid">
+
+    <div class="member-card">
+      <div class="member-number">#01</div>
+      <div class="member-avatar">🦆</div>
+      <div class="member-name">Driver One</div>
+      <div class="member-role">Team Captain · #01</div>
+      <div class="member-divider"></div>
+      <div class="member-sim"><strong>Sim:</strong> iRacing</div>
+      <div class="member-sim"><strong>Specialty:</strong> GT3 Sprint</div>
+    </div>
+
+    <div class="member-card">
+      <div class="member-number">#07</div>
+      <div class="member-avatar">🦆</div>
+      <div class="member-name">Driver Two</div>
+      <div class="member-role">Lead Driver · #07</div>
+      <div class="member-divider"></div>
+      <div class="member-sim"><strong>Sim:</strong> Assetto Corsa</div>
+      <div class="member-sim"><strong>Specialty:</strong> Endurance</div>
+    </div>
+
+    <div class="member-card">
+      <div class="member-number">#13</div>
+      <div class="member-avatar">🦆</div>
+      <div class="member-name">Driver Three</div>
+      <div class="member-role">Rookie · #13</div>
+      <div class="member-divider"></div>
+      <div class="member-sim"><strong>Sim:</strong> rFactor 2</div>
+      <div class="member-sim"><strong>Specialty:</strong> Open Wheel</div>
+    </div>
+
+    <div class="member-card">
+      <div class="member-number">#42</div>
+      <div class="member-avatar">🦆</div>
+      <div class="member-name">Driver Four</div>
+      <div class="member-role">Setup Wizard · #42</div>
+      <div class="member-divider"></div>
+      <div class="member-sim"><strong>Sim:</strong> ACC</div>
+      <div class="member-sim"><strong>Specialty:</strong> GT4</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 <span>Los Patos Hermanos</span> · Built with 🦆 and speed
+</footer>
+
+</body>
+</html>

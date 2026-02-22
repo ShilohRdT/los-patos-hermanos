@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Los Patos Hermanos | Simracing Team</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+  /* HOME-ONLY styles */
+
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 120px 48px 80px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(245,200,0,0.03) 80px, rgba(245,200,0,0.03) 81px),
+      repeating-linear-gradient(0deg,  transparent, transparent 80px, rgba(245,200,0,0.03) 80px, rgba(245,200,0,0.03) 81px);
+    animation: gridMove 12s linear infinite;
+  }
+
+  @keyframes gridMove {
+    from { background-position: 0 0; }
+    to   { background-position: 80px 80px; }
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,200,0,0.12), transparent 70%);
+    top: -100px; left: -100px;
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse {
+    from { transform: scale(1); opacity: 0.7; }
+    to   { transform: scale(1.2); opacity: 1; }
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 28px;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: 2px;
+  }
+
+  h1 span { color: var(--yellow); display: block; }
+
+  .hero-sub {
+    margin-top: 28px;
+    font-size: 1.1rem;
+    color: rgba(232,232,224,0.6);
+    max-width: 480px;
+  }
+
+  .hero-duck {
+    position: absolute;
+    right: 6vw; bottom: 10%;
+    font-size: clamp(6rem, 14vw, 14rem);
+    opacity: 0.18;
+    animation: float 3s ease-in-out infinite alternate;
+    user-select: none;
+  }
+
+  @keyframes float {
+    from { transform: translateY(0) rotate(-5deg); }
+    to   { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+
+  .cta-btn-outline {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 2px solid rgba(245,200,0,0.4);
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 14px 100%);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .cta-btn-outline:hover { background: rgba(245,200,0,0.1); }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--mid);
+    border-top: 1px solid rgba(245,200,0,0.1);
+    border-bottom: 1px solid rgba(245,200,0,0.1);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(232,232,224,0.5);
+    margin-top: 6px;
+  }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    padding: 100px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-strip h2 { margin-bottom: 20px; }
+
+  .about-strip p {
+    color: rgba(232,232,224,0.65);
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+  }
+
+  .about-duck {
+    font-size: 10rem;
+    text-align: center;
+    opacity: 0.25;
+    animation: float 4s ease-in-out infinite alternate;
+  }
+
+  @media (max-width: 768px) {
+    #home { padding: 100px 24px 60px; }
+    .hero-duck { display: none; }
+    .stats-bar { padding: 40px 24px; }
+    .about-strip { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+    .about-duck { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Los Patos <span>Hermanos</span></a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="results.html">Results</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">🏁 Simracing Team</div>
+    <h1>Los Patos<span>Hermanos</span></h1>
+    <p class="hero-sub">Speed, brotherhood, and a whole lot of quacking. We race hard and we race together.</p>
+    <div class="hero-buttons">
+      <a href="team.html" class="cta-btn">Meet the Team</a>
+      <a href="results.html" class="cta-btn-outline">Race Results</a>
+    </div>
+  </div>
+  <div class="hero-duck">🦆</div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div>
+    <div class="stat-number">4</div>
+    <div class="stat-label">Drivers</div>
+  </div>
+  <div>
+    <div class="stat-number">12</div>
+    <div class="stat-label">Races</div>
+  </div>
+  <div>
+    <div class="stat-number">5</div>
+    <div class="stat-label">Wins</div>
+  </div>
+  <div>
+    <div class="stat-number">3</div>
+    <div class="stat-label">Platforms</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-strip">
+  <div>
+    <div class="section-label">Who We Are</div>
+    <h2>Brothers on the <span style="color:var(--yellow)">Track</span></h2>
+    <p>Los Patos Hermanos is a simracing team built on friendship, competition, and the love of going fast. We might be ducks, but we don't waddle — we fly.</p>
+    <p>From GT3 sprints to long-distance endurance races, we push each other to be better every single lap.</p>
+    <a href="team.html" class="cta-btn" style="margin-top:12px">Meet the Squad</a>
+  </div>
+  <div class="about-duck">🦆</div>
+</div>
+
+<footer>
+  © 2025 <span>Los Patos Hermanos</span> · Built with 🦆 and speed
+</footer>
+
+</body>
+</html>
