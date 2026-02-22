@@ -30,18 +30,6 @@
     font-family: 'Barlow', sans-serif;
     font-size: 17px;
     line-height: 1.6;
-    cursor: none;
-  }
-
-  /* Custom duck cursor */
-  .cursor {
-    width: 28px; height: 28px;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    font-size: 22px;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s;
   }
 
   /* =====================
@@ -379,7 +367,7 @@
     text-transform: uppercase;
     border: none;
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
-    cursor: none;
+
     transition: background 0.2s, transform 0.2s;
   }
 
@@ -422,9 +410,6 @@
 </style>
 </head>
 <body>
-
-<!-- 🦆 Custom cursor — just a duck following your mouse! -->
-<div class="cursor" id="cursor">🦆</div>
 
 <!-- =====================
      NAV BAR
@@ -568,7 +553,7 @@
 
     <div class="contact-info">
       <p>Want to race with us, sponsor the team, or just say quack? Hit us up.</p>
-      <div class="contact-detail"><span class="icon">📧</span> team@lospatoshermanos.com</div>
+      <div class="contact-detail"><span class="icon">📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8bffeeeae6cbe7e4f8fbeaffe4f8e3eef9e6eae5e4f8a5e8e4e6">[email&#160;protected]</a></div>
       <div class="contact-detail"><span class="icon">🎮</span> Discord: LPH Racing</div>
       <div class="contact-detail"><span class="icon">📍</span> Everywhere on the grid</div>
     </div>
@@ -596,15 +581,8 @@
      JS = the "behaviour" of the page.
      It makes things move, react, and do stuff.
      ===================== -->
-<script>
-  // 1. DUCK CURSOR — follows your mouse around
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
-
-  // 2. SCROLL REVEAL — sections fade in as you scroll down
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // 1. SCROLL REVEAL — sections fade in as you scroll down
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -616,12 +594,4 @@
 
   reveals.forEach(el => observer.observe(el));
 
-  // 3. FORM HANDLER — shows a friendly message on submit
-  function handleForm(e) {
-    e.preventDefault(); // stops the page from refreshing
-    alert('Message sent! The ducks will be in touch. 🦆');
-    e.target.reset(); // clears the form
-  }
-</script>
-</body>
-</html>
+  // 3. FORM HANDLER — shows a friendly
